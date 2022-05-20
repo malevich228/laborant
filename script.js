@@ -3,7 +3,7 @@ function calculation() {
     var y = document.getElementsByName('y');
     var z = document.getElementsByName('z');
 
-    var F = Math.pow(x[0].value, y[0].value)+Math.pow(y[0].value, z[0].value)+Math.pow(z[0].value, x[0].value);
+    var F = (x[0].value-y[0].value)/(2*x[0].value*z[0].value);
     alert(F);
 }
 
@@ -12,9 +12,10 @@ function clock() {
     date= now.getDate();
     month= now.getMonth()+1;
     year= now.getYear()-100;
-    dateStr= date;
-    dateStr+= "%" + month;
-    dateStr+= "%" + year;
+     dateStr =  year;
+    dateStr += "-" + month;
+    dateStr += "-" + date;
+    
     document.clock.date.value = dateStr;
     Timer= setTimeout("clock()", 1000);
     }
